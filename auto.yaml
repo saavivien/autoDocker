@@ -1,0 +1,20 @@
+version: '3'
+services:
+    postgres-container:
+        image: postgres    
+        ports:
+            - 5433:5432
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=root
+            - POSTGRES_DB=auto-dockerized
+    auto_app:
+        image: auto-docker-image
+        ports:
+              - 8080:8585
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=root
+
+
+        
